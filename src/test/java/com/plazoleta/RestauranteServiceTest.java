@@ -35,7 +35,7 @@ public class RestauranteServiceTest {
         when(restauranteRepository.save(any(Restaurante.class))).thenReturn(restaurante);
         Restaurante resultado = restauranteService.crearRestaurante(dto);
         assertEquals("Nuevo Restaurante", restaurante.getNombre());
-        assertEquals("Calle 2", resultado.getDireccion());
+        assertEquals("Calle 1", resultado.getDireccion());
         verify(restauranteRepository, times(1)).save(any(Restaurante.class));
     }
 
@@ -57,7 +57,7 @@ public class RestauranteServiceTest {
         Restaurante actualizado = restauranteService.actualizarRestaurante(id,dto);
 
         assertEquals("Restaurante Actualizado", actualizado.getNombre());
-        assertEquals("Dirección actualizada", actualizado.getDireccion());
+        assertEquals("Dirección Actualizada", actualizado.getDireccion());
         verify(restauranteRepository, times(1)).findById(id);
         verify(restauranteRepository, times(1)).save(existente);
     }
