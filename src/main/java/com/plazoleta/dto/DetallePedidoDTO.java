@@ -15,5 +15,6 @@ public class DetallePedidoDTO {
 
     private Long id;
     private Long platoId;
+    private Long pedidoId;
     private int cantidad;
 }
