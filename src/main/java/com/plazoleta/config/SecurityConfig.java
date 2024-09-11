@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/restaurantes/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
+                .oauth2Login(withDefaults())
                 .httpBasic(withDefaults());
 
         return http.build();
