@@ -32,7 +32,7 @@ public class CognitoOAuthService {
         body.add("grant_type", "authorization_code");
         body.add("client_id", "31c99r2vcr4m22uapq95v7v9f8");
         body.add("code", code);
-        body.add("redirect_uri", "https://plazoleta.com/login/oauth2/code/cognito");
+        body.add("redirect_uri", "https://plazoleta-ELB-153711661.us-east-2.elb.amazonaws.com/login/oauth2/code/cognito");
 
         HttpEntity<MultiValueMap<String,String>> request = new HttpEntity<>(body, headers);
         ResponseEntity<Map> response = restTemplate.postForEntity("https://plazoleta2.auth.us-east-2.amazoncognito.com/oauth2/token", request, Map.class);
