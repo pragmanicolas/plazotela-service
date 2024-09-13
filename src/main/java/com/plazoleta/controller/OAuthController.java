@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 public class OAuthController {
 
@@ -18,7 +20,8 @@ public class OAuthController {
 
     @GetMapping("/login/oauth2/code/cognito")
     public String handleCognitoCallback(@RequestParam("code") String code){
-        String accessToken = cognitoOAuthService.exchangeCodeForToken(code);
-        return "Token recibido: " + accessToken;
+        //String accessToken = cognitoOAuthService.exchangeCodeForToken(code);
+        System.out.println("Token recibido: " + code);
+        return "Token recibido: " + code;
     }
 }

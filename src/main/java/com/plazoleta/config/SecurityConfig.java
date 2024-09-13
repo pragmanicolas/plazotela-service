@@ -15,7 +15,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
-@EnableWebSecurity
+/*@EnableWebSecurity
 @Configuration
 public class SecurityConfig {
 
@@ -25,6 +25,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/publico/**").permitAll()
                         .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/login/oauth2/code/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(Customizer.withDefaults());
@@ -32,4 +33,4 @@ public class SecurityConfig {
         return http.build();
     }
 
-}
+}*/
